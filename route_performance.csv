@@ -1,0 +1,4 @@
+OriginCity,DestinationCity,total_shipments,on_time_count,OTD_Percent
+Delhi,Bangalore,2,1,50.0
+Delhi,Jammu,3,2,66.66666666666666
+Noida,Mumbai,3,1,33.33333333333333

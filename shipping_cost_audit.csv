@@ -1,0 +1,11 @@
+ShipmentID,CarrierName,OriginCity,DestinationCity,ExpectedDeliveryDate,ActualDeliveryDate,Status,Route,RateID,RatePerKG,TotalCost
+101,BlueDart,Delhi,Jammu,2026-02-10,2026-02-10,Delivered,Delhi-Jammu,5.0,35.0,175.0
+102,Delhivery,Noida,Mumbai,2026-02-12,2026-02-15,Delivered,Noida-Mumbai,,,
+103,FedEx,Delhi,Bangalore,2026-02-14,,In-Transit,Delhi-Bangalore,1.0,45.0,225.0
+104,BlueDart,Gurgaon,Jammu,2026-02-11,,In-Transit,Gurgaon-Jammu,,,
+105,FedEx,Delhi,Bangalore,2026-02-12,2026-02-12,Delivered,Delhi-Bangalore,1.0,45.0,225.0
+106,FedEx,Delhi,Bangalore,2026-02-13,2026-02-16,Delivered,Delhi-Bangalore,1.0,45.0,225.0
+107,BlueDart,Delhi,Jammu,2026-02-10,2026-02-10,Delivered,Delhi-Jammu,5.0,35.0,175.0
+108,BlueDart,Delhi,Jammu,2026-02-14,2026-02-17,Delivered,Delhi-Jammu,5.0,35.0,175.0
+109,Delhivery,Noida,Mumbai,2026-02-10,2026-02-11,Delivered,Noida-Mumbai,,,
+110,Delhivery,Noida,Mumbai,2026-02-15,2026-02-15,Delivered,Noida-Mumbai,,,
