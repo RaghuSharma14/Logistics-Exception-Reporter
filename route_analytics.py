@@ -4,32 +4,32 @@ import matplotlib.pyplot as plt
 
 
 
-# 1. Connect to your database
+# Connect to your database
 engine = create_engine('mysql+pymysql://root:Gingka007pegasus@localhost/logistics_db')
 
-# 2. Pull only 'Delivered' shipments to calculate performance
+# Pull only 'Delivered' shipments to calculate performance
 df = pd.read_sql_query("SELECT * FROM shipments WHERE Status = 'Delivered'", engine)
 
-# 3. Convert dates to a format Python understands
+# Convert dates to a format Python understands
 df['ActualDeliveryDate'] = pd.to_datetime(df['ActualDeliveryDate'])
 df['ExpectedDeliveryDate'] = pd.to_datetime(df['ExpectedDeliveryDate'])
 
-# 4. Calculate if a shipment was on time
+# Calculate if a shipment was on time
 df['is_on_time'] = df['ActualDeliveryDate'] <= df['ExpectedDeliveryDate']
 
-# 5. Group by 'Route' (Origin to Destination) to see which path is slowest
+# Group by 'Route' (Origin to Destination) to see which path is slowest
 route_perf = df.groupby(['OriginCity', 'DestinationCity']).agg(
     total_shipments=('ShipmentID', 'count'),
     on_time_count=('is_on_time', 'sum')
 ).reset_index()
 
-# 6. Calculate OTD Percentage
+# Calculate OTD Percentage
 route_perf['OTD_Percent'] = (route_perf['on_time_count'] / route_perf['total_shipments']) * 100
 
 print("--- Route Performance Summary ---")
 print(route_perf)
 
-# 7. Save this for your Dashboard
+# Save this for the Dashboard
 route_perf.to_csv('route_performance.csv', index=False)
 
 
